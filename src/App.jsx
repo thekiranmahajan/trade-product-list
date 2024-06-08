@@ -1,13 +1,19 @@
-import { ProductCard } from "./components";
+import { Footer, Header, ProductCard } from "./components";
 import useProducts from "./hooks/useProducts";
 
 const App = () => {
   const products = useProducts();
-  console.log(products);
+  // console.log(products);
   return (
-    <div className="">
-      <ProductCard />
-    </div>
+    <>
+      <Header />
+      <section>
+        {products?.map((product) => (
+          <ProductCard key={product?.id} product={product} />
+        ))}
+      </section>
+      <Footer />
+    </>
   );
 };
 
