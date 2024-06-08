@@ -7,7 +7,7 @@ const useProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(FAKE_PRODUCT_API);
-      const data = response.json();
+      const data = await response.json();
       console.log(data);
       setProducts(data);
     };
