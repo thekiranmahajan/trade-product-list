@@ -8,7 +8,7 @@ const useProducts = () => {
     const fetchProducts = async () => {
       const response = await fetch(FAKE_PRODUCT_API);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setProducts(data);
     };
     fetchProducts();
