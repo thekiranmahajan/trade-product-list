@@ -5,7 +5,7 @@ const App = () => {
   const products = useProducts();
   console.log(products);
   return (
-    <div>
+    <div className="">
       <ProductCard />
     </div>
   );
