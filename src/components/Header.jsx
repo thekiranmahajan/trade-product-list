@@ -1,3 +1,5 @@
+import "../styles/header.css";
+
 import cartLogo from "../assets/shopping-cart.png";
 const Header = () => {
   return (

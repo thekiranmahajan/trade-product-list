@@ -1,3 +1,4 @@
+import "../styles/card.css";
 import star from "../assets/star.svg";
 
 const ProductCard = ({ product }) => {
