@@ -6,7 +6,7 @@ import hamburgerImg from "../assets/hamburger.svg";
 
 const Header = () => {
   const [isHamburger, setIsHamburger] = useState(false);
-  console.log(isHamburger);
+  // console.log(isHamburger);
 
   return (
     <nav className="nav-container">
