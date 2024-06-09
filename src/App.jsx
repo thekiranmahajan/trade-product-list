@@ -1,23 +1,34 @@
-import { Footer, Header, ProductCard, ProductCardShimmer } from "./components";
+import { Footer, Header, ProductCard, SearchBar } from "./components";
 import useProducts from "./hooks/useProducts";
+import { ProductCardShimmer } from "./shimmers";
+import notFound from "./assets/not-found.svg";
 
 const App = () => {
-  const products = useProducts();
-  // console.log(products);
+  const { products, filteredProducts, setFilteredProducts } = useProducts();
   return (
     <>
       <Header />
+      <SearchBar
+        setFilteredProducts={setFilteredProducts}
+        products={products}
+      />
       <section>
-        {products?.length > 0 ? (
+        {products?.length === 0 ? (
+          <ProductCardShimmer />
+        ) : filteredProducts === null ? (
+          <div className="no-results">
+            <img src={notFound} alt="not-found" />
+            No products found with your search....
+          </div>
+        ) : (
           <>
-            {products?.map((product) => (
+            {filteredProducts?.map((product) => (
               <ProductCard key={product?.id} product={product} />
             ))}
           </>
-        ) : (
-          <ProductCardShimmer />
         )}
       </section>
+
       <Footer />
     </>
   );

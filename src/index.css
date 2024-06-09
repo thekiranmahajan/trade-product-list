@@ -21,7 +21,23 @@ section {
   margin: 0 auto;
   padding: 1rem 4rem;
 }
-
+.no-results {
+  position: absolute;
+  height: 80%;
+  top: 20%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%);
+  font-size: larger;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.no-results > img {
+  height: 10rem;
+}
 @media (min-width: 655px) and (max-width: 1024px) {
   section {
     grid-template-columns: repeat(2, 1fr);
