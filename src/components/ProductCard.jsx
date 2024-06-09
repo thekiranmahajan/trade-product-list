@@ -21,7 +21,8 @@ const ProductCard = ({ product }) => {
         <div className="ratings-section">
           <img id="star" src={star} alt="star" />
           <h4 id="product-ratings">
-            {count} <span>({rate})</span>
+            {rate}
+            <span>({count})</span>
           </h4>
         </div>
         <p id="product-description">{description}</p>
