@@ -1,4 +1,4 @@
-nav {
+.nav-container {
   width: 100%;
   height: 4rem;
   color: white;
@@ -7,11 +7,20 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0.1rem 1rem;
+  position: relative;
 }
-nav > img {
+
+.nav-container > img {
   height: 3rem;
 }
-nav > ul {
+
+#hamburger-img {
+  height: 2.6rem;
+}
+#hamburger-img:active {
+  rotate: 180deg;
+}
+.not-hamburger {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -20,10 +29,81 @@ nav > ul {
   max-width: 80%;
   list-style: none;
 }
-nav > ul > li {
+
+.not-hamburger > li {
   cursor: pointer;
-  padding: 0.7rem 1.3rem;
   border-radius: 0.8rem;
   background-color: #7717c6;
   box-shadow: 4px 2px 7px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.4rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.not-hamburger > li:active {
+  background-color: #5a0ca8;
+  transform: scale(0.95);
+}
+
+.hamburger {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%);
+  border-radius: 1rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s forwards;
+}
+
+.hamburger > li {
+  cursor: pointer;
+  border-radius: 0.8rem;
+  background-color: #7717c6;
+  box-shadow: 4px 2px 7px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  height: 3rem;
+  width: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.8rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hamburger > li:active {
+  background-color: #5a0ca8;
+  transform: scale(0.95);
+}
+@keyframes slideIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .not-hamburger {
+    display: none;
+  }
+}
+@media (min-width: 621px) {
+  .hamburger {
+    display: none;
+  }
+  #hamburger-img {
+    display: none;
+  }
 }
