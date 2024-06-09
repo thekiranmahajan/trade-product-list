@@ -1,4 +1,4 @@
-import { Footer, Header, ProductCard } from "./components";
+import { Footer, Header, ProductCard, ProductCardShimmer } from "./components";
 import useProducts from "./hooks/useProducts";
 
 const App = () => {
@@ -8,9 +8,15 @@ const App = () => {
     <>
       <Header />
       <section>
-        {products?.map((product) => (
-          <ProductCard key={product?.id} product={product} />
-        ))}
+        {products?.length > 0 ? (
+          <>
+            {products?.map((product) => (
+              <ProductCard key={product?.id} product={product} />
+            ))}
+          </>
+        ) : (
+          <ProductCardShimmer />
+        )}
       </section>
       <Footer />
     </>
