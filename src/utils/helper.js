@@ -7,18 +7,21 @@ export const userQuery = (products, setFilteredProducts, searchText) => {
 };
 
 export const priceSort = (products, setFilteredProducts) => {
-  const sortedData = products.sort((a, b) => a.price - b.price);
+  console.log(products);
+  const sortedData = [...products].sort((a, b) => a.price - b.price);
   setFilteredProducts(sortedData);
   console.log(sortedData);
 };
 export const ratingSort = (products, setFilteredProducts) => {
-  const sortedData = products.sort((a, b) => a.rating.rate - b.rating.rate);
+  const sortedData = [...products].sort(
+    (a, b) => a.rating.rate - b.rating.rate
+  );
   setFilteredProducts(sortedData);
   console.log(sortedData);
 };
 export const nameSort = (products, setFilteredProducts) => {
-  const sortedData = products.sort((a, b) =>
-    a.name.localCompare(b.rating.rate)
+  const sortedData = [...products].sort((a, b) =>
+    a.title.localeCompare(b.title)
   );
   setFilteredProducts(sortedData);
   console.log(sortedData);
