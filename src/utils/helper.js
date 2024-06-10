@@ -7,7 +7,6 @@ export const userQuery = (products, setFilteredProducts, searchText) => {
 };
 
 export const priceSort = (products, setFilteredProducts) => {
-  console.log(products);
   const sortedData = [...products].sort((a, b) => a.price - b.price);
   setFilteredProducts(sortedData);
   // console.log(sortedData);
