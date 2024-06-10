@@ -1,17 +1,17 @@
 .search-container {
-  height: 6rem;
+  height: 7rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 1rem 1.2rem;
-  background-color: aqua;
 }
 .search-bar {
   height: 2.4rem;
-  width: 50%;
+  width: 80%;
+  max-width: 40rem;
   padding: 0.5rem;
   border-radius: 1.5rem;
   outline: none;
@@ -21,5 +21,23 @@
 .sort-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
+}
+
+.sort-container > button {
+  padding: 0.1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  height: 2.4rem;
+  min-width: 5.5rem;
+  background-color: rgba(126, 252, 0, 0.735);
+  font-weight: 500;
+  color: #333131;
+  transition: transform ease-in-out 200ms;
+}
+.sort-container > button:active {
+  transform: scale(0.94);
+  border: 2px solid #696969ad;
 }

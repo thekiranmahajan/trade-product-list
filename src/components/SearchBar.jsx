@@ -17,6 +17,7 @@ const SearchBar = ({ setFilteredProducts, products }) => {
   const handleNameSort = () => {
     nameSort(products, setFilteredProducts);
   };
+
   return (
     <div className="search-container">
       <input
@@ -28,8 +29,8 @@ const SearchBar = ({ setFilteredProducts, products }) => {
       />
       <div className="sort-container">
         <button onClick={handlePriceSort}>Price Sort</button>
-        <button onClick={handleRatingSort}>rating Sort</button>
-        <button onClick={handleNameSort}>name Sort</button>
+        <button onClick={handleRatingSort}>Rating Sort</button>
+        <button onClick={handleNameSort}>Name Sort</button>
       </div>
     </div>
   );
