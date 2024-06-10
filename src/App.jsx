@@ -4,7 +4,8 @@ import { ProductCardShimmer } from "./shimmers";
 import notFound from "./assets/not-found.svg";
 
 const App = () => {
-  const { products, filteredProducts, setFilteredProducts } = useProducts();
+  const { products, filteredProducts, setFilteredProducts, isLoading } =
+    useProducts();
   return (
     <>
       <Header />
@@ -13,7 +14,7 @@ const App = () => {
         products={products}
       />
       <section>
-        {products?.length === 0 ? (
+        {products?.length === 0 && isLoading ? (
           <ProductCardShimmer />
         ) : filteredProducts === null ? (
           <div className="no-results">
