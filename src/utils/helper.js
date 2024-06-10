@@ -3,26 +3,26 @@ export const userQuery = (products, setFilteredProducts, searchText) => {
     product?.title?.toLowerCase().includes(searchText.toLowerCase())
   );
   setFilteredProducts(filteredData.length === 0 ? null : filteredData);
-  console.log(filteredData);
+  // console.log(filteredData);
 };
 
 export const priceSort = (products, setFilteredProducts) => {
   console.log(products);
   const sortedData = [...products].sort((a, b) => a.price - b.price);
   setFilteredProducts(sortedData);
-  console.log(sortedData);
+  // console.log(sortedData);
 };
 export const ratingSort = (products, setFilteredProducts) => {
   const sortedData = [...products].sort(
     (a, b) => a.rating.rate - b.rating.rate
   );
   setFilteredProducts(sortedData);
-  console.log(sortedData);
+  // console.log(sortedData);
 };
 export const nameSort = (products, setFilteredProducts) => {
   const sortedData = [...products].sort((a, b) =>
     a.title.localeCompare(b.title)
   );
   setFilteredProducts(sortedData);
-  console.log(sortedData);
+  // console.log(sortedData);
 };
