@@ -36,6 +36,10 @@ This is a fully responsive e-commerce application built with React.js, Vite.js, 
 
 ## Preview
 
+
+https://github.com/thekiranmahajan/trade-product-list/assets/91893931/ff11d7ee-2aa6-44b9-9c55-1057d3574b0a
+
+
 ## Live Demo
 
 Check out the live demo [here](https://trade-product-list.vercel.app).
