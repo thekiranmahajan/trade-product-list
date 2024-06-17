@@ -4,12 +4,16 @@ import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ProductPage from "./pages/ProductPage.jsx";
+import UsersInfoPage from "./pages/UsersInfoPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{ path: "", element: <ProductPage /> }],
+    children: [
+      { path: "", element: <ProductPage /> },
+      { path: "/users-info", element: <UsersInfoPage /> },
+    ],
   },
 ]);
 
