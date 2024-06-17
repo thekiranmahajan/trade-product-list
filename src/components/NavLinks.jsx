@@ -12,7 +12,6 @@ const NavLinks = ({ style }) => {
       <NavLink className="nav-link" to="#">
         About
       </NavLink>
-
       <NavLink className="nav-link" to="/users-info">
         Users Page
       </NavLink>

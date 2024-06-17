@@ -12,14 +12,21 @@ const useUsersInfo = () => {
 
   const fetchFeaturedUsers = async () => {
     const response = await fetch(FEATURED_USERS_API, API_OPTIONS);
+    if (!response.ok) {
+      throw new Error("Failed to fetch featured users");
+    }
     const data = await response.json();
-    console.log(data);
+    console.log("Featured Users:", data);
     return data.data;
   };
+
   const fetchUserGroups = async () => {
     const response = await fetch(USERS_GROUPS_API, API_OPTIONS);
+    if (!response.ok) {
+      throw new Error("Failed to fetch user groups");
+    }
     const data = await response.json();
-    console.log(data);
+    console.log("User Groups:", data);
     return data.data;
   };
 
@@ -33,17 +40,16 @@ const useUsersInfo = () => {
       setFeaturedUsers(featUsers);
       setUserGroups(userGroups);
     } catch (error) {
-      console.log(
-        "something went wrong either while fetching featuredUsers or userGroups",
-        error
-      );
+      console.error("Error fetching data:", error);
     } finally {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
     fetchUsers();
   }, []);
+
   return { featuredUsers, userGroups, isLoading };
 };
 

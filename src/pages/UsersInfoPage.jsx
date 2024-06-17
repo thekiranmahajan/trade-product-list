@@ -2,7 +2,7 @@ import React from "react";
 import useUsersInfo from "../hooks/useUsersInfo";
 
 const UsersInfoPage = () => {
-  const [featuredUsers, userGroups] = useUsersInfo();
+  const { featuredUsers, userGroups, isLoading } = useUsersInfo();
   console.log(featuredUsers);
   console.log(userGroups);
 
