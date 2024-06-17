@@ -5,7 +5,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="home">
+        <Outlet />
+      </div>
       <Footer />
     </>
   );
