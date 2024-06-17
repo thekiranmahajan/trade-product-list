@@ -29,23 +29,32 @@
   max-width: 80%;
   list-style: none;
 }
-
-.not-hamburger > li {
+.nav-link {
   cursor: pointer;
   border-radius: 0.8rem;
   background-color: #7717c6;
   box-shadow: 4px 2px 7px rgba(0, 0, 0, 0.2);
   list-style: none;
-  height: 2.5rem;
-  width: 6rem;
+  text-decoration: none;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 0.4rem;
   transition: background-color 0.3s, transform 0.3s;
 }
+.not-hamburger .nav-link {
+  height: 2.5rem;
+  width: 6rem;
+  margin-right: 0.4rem;
+}
 
-.not-hamburger > li:active {
+.hamburger .nav-link {
+  height: 3rem;
+  width: 7rem;
+  margin-top: 0.8rem;
+}
+
+.nav-link:active {
   background-color: #5a0ca8;
   transform: scale(0.95);
 }
@@ -66,25 +75,6 @@
   animation: slideIn 0.5s forwards;
 }
 
-.hamburger > li {
-  cursor: pointer;
-  border-radius: 0.8rem;
-  background-color: #7717c6;
-  box-shadow: 4px 2px 7px rgba(0, 0, 0, 0.2);
-  list-style: none;
-  height: 3rem;
-  width: 7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.8rem;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.hamburger > li:active {
-  background-color: #5a0ca8;
-  transform: scale(0.95);
-}
 @keyframes slideIn {
   from {
     top: -100%;
