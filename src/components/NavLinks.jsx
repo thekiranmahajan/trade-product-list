@@ -1,22 +1,40 @@
+import { forwardRef } from "react";
 import { NavLink } from "react-router-dom";
 
-const NavLinks = ({ style }) => {
+const NavLinks = forwardRef((props, ref) => {
+  const { setIsHamburger, style } = props;
   return (
-    <ul className={style}>
-      <NavLink className="nav-link" to="/">
+    <ul ref={ref} className={style}>
+      <NavLink
+        onClick={() => setIsHamburger(false)}
+        className="nav-link"
+        to="/"
+      >
         Home
       </NavLink>
-      <NavLink className="nav-link" to="#">
+      <NavLink
+        onClick={() => setIsHamburger(false)}
+        className="nav-link"
+        to="#"
+      >
         Contact
       </NavLink>
-      <NavLink className="nav-link" to="#">
+      <NavLink
+        onClick={() => setIsHamburger(false)}
+        className="nav-link"
+        to="#"
+      >
         About
       </NavLink>
-      <NavLink className="nav-link" to="/users-info">
+      <NavLink
+        onClick={() => setIsHamburger(false)}
+        className="nav-link"
+        to="/users-info"
+      >
         Users Page
       </NavLink>
     </ul>
   );
-};
+});
 
 export default NavLinks;
