@@ -4,6 +4,13 @@ This is a fully responsive e-commerce application built with React.js, Vite.js, 
 
 ## Features
 
+- **New Features**:
+
+  - A custom hook that fetches data from 2 different APIs and renders it as whole on a seperate page built using the createBrowserRouter of React-Router-DOM.
+  - New styled components with flexbox with complete responsiveness and better UI/UX.
+  - More side case and error handling.
+  - useEffect clean-ups for avoiding side effects of react render cycles on mount and unmount.
+
 - **Responsive Header**:
 
   - Mobile, tablet, and desktop-friendly.
@@ -36,9 +43,7 @@ This is a fully responsive e-commerce application built with React.js, Vite.js, 
 
 ## Preview
 
-
 https://github.com/thekiranmahajan/trade-product-list/assets/91893931/ff11d7ee-2aa6-44b9-9c55-1057d3574b0a
-
 
 ## Live Demo
 
@@ -123,10 +128,8 @@ TRADE-PRODUCT-LIST
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-
 ## Acknowledgements
 
 - [Fake Store API](https://fakestoreapi.com)
 - [Vite.js](https://vitejs.dev)
 - [React.js](https://reactjs.org)
-
