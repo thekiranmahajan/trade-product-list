@@ -36,6 +36,7 @@
   font-weight: 500;
   color: #333131;
   transition: transform ease-in-out 200ms;
+  cursor: pointer;
 }
 .sort-container > button:active {
   transform: scale(0.94);
