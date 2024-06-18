@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/users.css";
 const UserCard = ({ profile }) => {
-  //   console.log(profile);
   const { profilePic, firstName, lastName, jobTitle, email, phone } = profile;
   return (
     <div className="user-card">

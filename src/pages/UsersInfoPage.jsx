@@ -5,8 +5,6 @@ import spinner from "../assets/spinner.svg";
 
 const UsersInfoPage = () => {
   const { featuredUsers, userGroups, isLoading } = useUsersInfo();
-  console.log(featuredUsers);
-  // console.log(userGroups);
 
   return (
     <div className="user-container">
