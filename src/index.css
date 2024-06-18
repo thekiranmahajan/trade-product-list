@@ -39,6 +39,16 @@ section {
 .no-results > img {
   height: 10rem;
 }
+.user-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 2rem 1rem;
+}
 @media (min-width: 655px) and (max-width: 1024px) {
   section {
     grid-template-columns: repeat(2, 1fr);

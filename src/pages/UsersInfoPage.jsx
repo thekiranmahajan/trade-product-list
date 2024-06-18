@@ -8,8 +8,13 @@ const UsersInfoPage = () => {
   // console.log(userGroups);
 
   return (
-    <div className="card-container">
-      {featuredUsers && <UserCard featuredUsers={featuredUsers[0]} />}
+    <div className="user-container">
+      {featuredUsers?.map((user) => (
+        <UserCard key={user?._id} profile={user?.profile} />
+      ))}
+      {userGroups?.map((user) => (
+        <UserCard key={user?._id} profile={user?.profile} />
+      ))}
     </div>
   );
 };
