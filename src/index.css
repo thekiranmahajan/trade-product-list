@@ -39,16 +39,34 @@ section {
 .no-results > img {
   height: 10rem;
 }
+
 .user-container {
   min-height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.5rem;
   padding: 2rem 1rem;
 }
+
+.featured-users,
+.user-groups {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 2rem 0;
+}
+
 @media (min-width: 655px) and (max-width: 1024px) {
   section {
     grid-template-columns: repeat(2, 1fr);

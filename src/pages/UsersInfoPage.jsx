@@ -9,12 +9,17 @@ const UsersInfoPage = () => {
 
   return (
     <div className="user-container">
-      {featuredUsers?.map((user) => (
-        <UserCard key={user?._id} profile={user?.profile} />
-      ))}
-      {userGroups?.map((user) => (
-        <UserCard key={user?._id} profile={user?.profile} />
-      ))}
+      <div className="featured-users">
+        {featuredUsers?.map((user) => (
+          <UserCard key={user?._id} profile={user?.profile} />
+        ))}
+      </div>
+      <hr />
+      <div className="user-groups">
+        {userGroups?.map((user) => (
+          <UserCard key={user?._id} profile={user?.profile} />
+        ))}
+      </div>
     </div>
   );
 };
