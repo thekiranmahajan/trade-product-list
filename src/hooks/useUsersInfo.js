@@ -10,8 +10,11 @@ const useUsersInfo = () => {
   const [userGroups, setUserGroups] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchFeaturedUsers = async () => {
-    const response = await fetch(FEATURED_USERS_API, API_OPTIONS);
+  const fetchFeaturedUsers = async (signal) => {
+    const response = await fetch(FEATURED_USERS_API, {
+      ...API_OPTIONS,
+      signal,
+    });
     if (!response.ok) {
       throw new Error("Failed to fetch featured users");
     }
@@ -20,8 +23,8 @@ const useUsersInfo = () => {
     return data.data;
   };
 
-  const fetchUserGroups = async () => {
-    const response = await fetch(USERS_GROUPS_API, API_OPTIONS);
+  const fetchUserGroups = async (signal) => {
+    const response = await fetch(USERS_GROUPS_API, { ...API_OPTIONS, signal });
     if (!response.ok) {
       throw new Error("Failed to fetch user groups");
     }
@@ -30,24 +33,34 @@ const useUsersInfo = () => {
     return data.data;
   };
 
-  const fetchUsers = async () => {
+  const fetchUsers = async (signal) => {
     setIsLoading(true);
     try {
       const [featUsers, userGroups] = await Promise.all([
-        fetchFeaturedUsers(),
-        fetchUserGroups(),
+        fetchFeaturedUsers(signal),
+        fetchUserGroups(signal),
       ]);
-      setFeaturedUsers(featUsers);
-      setUserGroups(userGroups);
+      if (!signal.aborted) {
+        setFeaturedUsers(featUsers);
+        setUserGroups(userGroups);
+        setIsLoading(false);
+      }
     } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setIsLoading(false);
+      if (error.name !== "AbortError") {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
+      }
     }
   };
 
   useEffect(() => {
-    fetchUsers();
+    const controller = new AbortController();
+    const { signal } = controller;
+    fetchUsers(signal);
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return { featuredUsers, userGroups, isLoading };
