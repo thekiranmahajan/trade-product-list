@@ -133,3 +133,6 @@ Contributions are what make the open-source community such an amazing place to l
 - [Fake Store API](https://fakestoreapi.com)
 - [Vite.js](https://vitejs.dev)
 - [React.js](https://reactjs.org)
+
+## License
+[MIT License](LICENSE)
